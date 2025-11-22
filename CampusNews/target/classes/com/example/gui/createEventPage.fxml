@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.geometry.Insets?>
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+          prefHeight="500.0" prefWidth="500.0"
+          style="-fx-background-color: TEAL; -fx-border-color: midnightblue;"
+          xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="com.example.gui.CreatePageController">
+
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="600" minWidth="10" prefWidth="500"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="196" minHeight="0" prefHeight="130" vgrow="SOMETIMES"/>
+        <RowConstraints maxHeight="481" minHeight="10" prefHeight="370" vgrow="SOMETIMES"/>
+    </rowConstraints>
+
+    <children>
+        <Label text="Create New Event" textFill="#ffd942" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <font>
+                <Font size="36" name="System Bold"/>
+            </font>
+        </Label>
+
+        <GridPane GridPane.rowIndex="1" hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints prefWidth="100"/>
+                <ColumnConstraints prefWidth="300"/>
+            </columnConstraints>
+
+            <children>
+                <Label text="850 Number:" textFill="#ffd942" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="creator850" onAction="#creator850Entered" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="UNCW Email:" textFill="#ffd942" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="creatorEmail" onAction="#creatorEmailEntered" promptText="uncw.edu" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Event Date:" textFill="#ffd942" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <DatePicker fx:id="eventDatePicker" onAction="#eventDateEntered" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Event Time:" textFill="#ffd942" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <TextField fx:id="eventTime" onAction="#eventTimeEntered" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Event Location:" textFill="#ffd942" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <TextField fx:id="eventLocation" onAction="#eventLocationEntered" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Event Description:" textFill="#ffd942" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <TextField fx:id="eventDescription" onAction="#eventDescriptionEntered" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                <Label text="Event Type:" textFill="#ffd942" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="eventTypeSelector" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+                <Button fx:id="createEventButton" text="CREATE EVENT" onAction="#createEventButtonPressed"
+                        style="-fx-background-color: GOLD;" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+                <Button fx:id="returnHomeButton" text="RETURN HOME" onAction="#returnHomeButtonPressed"
+                        style="-fx-background-color: GOLD;" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+                <ListView fx:id="eventListView" GridPane.rowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+            </children>
+        </GridPane>
+    </children>
+</GridPane>
+
+
